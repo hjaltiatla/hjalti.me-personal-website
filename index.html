@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Hjalti - System Administrator & Cloud Infrastructure Specialist</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --primary-color: #2c3e50;
+      --secondary-color: #3498db;
+      --accent-color: #e74c3c;
+      --text-color: #2c3e50;
+      --light-bg: #f8f9fa;
+      --white: #ffffff;
+      --border-color: #e9ecef;
+      --linkedin-color: #0077B5;
+      --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      --shadow-hover: 0 8px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: var(--text-color);
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(44, 62, 80, 0.95);
+      backdrop-filter: blur(10px);
+      color: var(--white);
+      padding: 15px 0;
+      z-index: 1000;
+      box-shadow: var(--shadow);
+      transition: all 0.3s ease;
+    }
+
+    header nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      padding: 0 20px;
+    }
+
+    header nav a {
+      margin: 0 20px;
+      color: inherit;
+      text-decoration: none;
+      font-weight: 600;
+      cursor: pointer;
+      padding: 8px 16px;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    header nav a:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-2px);
+    }
+
+    section {
+      padding: 100px 20px 60px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    #home {
+      background: linear-gradient(135deg, var(--light-bg) 0%, var(--white) 100%);
+      text-align: center;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding-top: 80px;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      animation: fadeInUp 0.8s ease-out;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    #home h1 {
+      font-size: 3.5em;
+      font-weight: 700;
+      margin-bottom: 20px;
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .subtitle {
+      font-size: 1.4em;
+      color: var(--secondary-color);
+      font-weight: 600;
+      margin-bottom: 30px;
+    }
+
+    .bio {
+      font-size: 1.2em;
+      margin: 30px 0;
+      color: #555;
+      max-width: 700px;
+    }
+
+    .contact-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 40px;
+      flex-wrap: wrap;
+    }
+
+    .contact-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 24px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .linkedin-btn {
+      background: var(--linkedin-color);
+      color: var(--white);
+    }
+
+    .email-btn {
+      background: var(--secondary-color);
+      color: var(--white);
+    }
+
+    .github-btn {
+      background: #333;
+      color: var(--white);
+    }
+
+    #cv {
+      background: var(--white);
+      min-height: auto;
+      padding-top: 120px;
+    }
+
+    .cv-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .cv-header h1 {
+      font-size: 2.5em;
+      color: var(--primary-color);
+      margin-bottom: 10px;
+    }
+
+    .cv-container {
+      display: grid;
+      gap: 40px;
+    }
+
+    .cv-section {
+      background: var(--white);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      border-left: 4px solid var(--secondary-color);
+      transition: transform 0.3s ease;
+    }
+
+    .cv-section:hover {
+      transform: translateY(-2px);
+    }
+
+    .cv-section h2 {
+      color: var(--primary-color);
+      font-size: 1.5em;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .experience-item {
+      margin-bottom: 25px;
+      padding: 20px;
+      background: var(--light-bg);
+      border-radius: 8px;
+      border-left: 3px solid var(--accent-color);
+    }
+
+    .experience-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .job-title {
+      font-weight: 700;
+      color: var(--primary-color);
+      font-size: 1.1em;
+    }
+
+    .company {
+      color: var(--secondary-color);
+      font-weight: 600;
+    }
+
+    .duration {
+      color: #666;
+      font-style: italic;
+      margin-top: 5px;
+    }
+
+    .job-description {
+      margin-top: 10px;
+      color: #555;
+    }
+
+    .certifications-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .cert-item {
+      background: var(--light-bg);
+      padding: 20px;
+      border-radius: 8px;
+      border-left: 3px solid var(--secondary-color);
+    }
+
+    .cert-name {
+      font-weight: 700;
+      color: var(--primary-color);
+      margin-bottom: 5px;
+    }
+
+    .cert-date {
+      color: var(--secondary-color);
+      font-size: 0.9em;
+      font-weight: 600;
+    }
+
+    .cert-description {
+      color: #666;
+      font-size: 0.95em;
+      margin-top: 8px;
+    }
+
+    .skills-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .skill-category {
+      background: var(--light-bg);
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .skill-category h3 {
+      color: var(--primary-color);
+      margin-bottom: 15px;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+    }
+
+    .skill-tag {
+      background: var(--secondary-color);
+      color: var(--white);
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.85em;
+      font-weight: 600;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      #home h1 {
+        font-size: 2.5em;
+      }
+
+      .subtitle {
+        font-size: 1.2em;
+      }
+
+      .bio {
+        font-size: 1.1em;
+      }
+
+      .contact-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      header nav a {
+        margin: 0 10px;
+        font-size: 0.9em;
+      }
+
+      .cv-section {
+        padding: 20px;
+      }
+    }
+
+    /* Scroll animations */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <a data-target="home">Home</a>
+      <a data-target="cv">CV</a>
+    </nav>
+  </header>
+
+  <section id="home">
+    <div class="hero-content">
+      <h1>Hjalti</h1>
+      <p class="subtitle">System Administrator & Cloud Infrastructure Specialist</p>
+      <p class="bio">
+        Experienced System Administrator specializing in Windows Server, Microsoft 365, and Azure administration.
+        Passionate about networking and a dedicated Linux enthusiast, always exploring new technologies and
+        optimizing infrastructure to drive business success.
+      </p>
+      <div class="contact-buttons">
+        <a href="https://www.linkedin.com/in/hjalti1/" class="contact-btn linkedin-btn" target="_blank" rel="noopener">
+          <span>💼</span> LinkedIn
+        </a>
+        <a href="mailto:hjalti@hjalti.me" class="contact-btn email-btn">
+          <span>📧</span> Email
+        </a>
+        <a href="https://github.com/hjaltiatla" class="contact-btn github-btn" target="_blank" rel="noopener">
+          <span>🔗</span> GitHub
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="cv">
+    <div class="cv-header">
+      <h1>Curriculum Vitae</h1>
+      <p>Professional Experience & Qualifications</p>
+    </div>
+
+    <div class="cv-container">
+      <div class="cv-section fade-in">
+        <h2><span>👨‍💼</span> Professional Summary</h2>
+        <p>
+          Windows Server Hybrid Administrator with extensive experience in Windows Server and cloud infrastructure.
+          Skilled in Linux, Networking, PowerShell automation, and cross-functional collaboration with a proven track
+          record of optimizing IT operations and implementing scalable solutions.
+        </p>
+      </div>
+
+      <div class="cv-section fade-in">
+        <h2><span>💼</span> Professional Experience</h2>
+
+        <div class="experience-item">
+          <div class="job-title">System Administrator</div>
+          <div class="company">Nova</div>
+          <div class="duration">Reykjavik, Iceland • September 2025 to Present</div>
+        </div>
+
+        <div class="experience-item">
+          <div class="job-title">Microsoft 365 and Azure Administrator</div>
+          <div class="company">Wise</div>
+          <div class="duration">Reykjavik, Iceland • May 2024 to September 2025 (1 yr 5 mos)</div>
+        </div>
+
+        <div class="experience-item">
+          <div class="job-title">System Administrator</div>
+          <div class="company">Þekking (now part of Wise)</div>
+          <div class="duration">Kópavogur, Iceland • Apr 2021 to May 2024 (3 yrs 2 mos)</div>
+        </div>
+
+        <div class="experience-item">
+          <div class="job-title">System Administrator</div>
+          <div class="company">CCP Games</div>
+          <div class="duration">Iceland • Jan 2019 to Apr 2019 (4 mos)</div>
+          <div class="job-description">IT operations & information security team</div>
+        </div>
+
+        <div class="experience-item">
+          <div class="job-title">System Administrator</div>
+          <div class="company">CenterHotels</div>
+          <div class="duration">Iceland • May 2017 to Dec 2018 (1 yr 8 mos)</div>
+        </div>
+
+        <div class="experience-item">
+          <div class="job-title">System Administrator / IT Consultant</div>
+          <div class="company">HGA-Tech</div>
+          <div class="duration">Iceland • Sep 2016 to May 2017 (9 mos)</div>
+        </div>
+
+        <div class="experience-item">
+          <div class="job-title">Multiple Roles</div>
+          <div class="company">Advania</div>
+          <div class="duration">Iceland • Total 6 yrs 1 mo</div>
+          <div class="job-description">
+            • Microsoft SQL Database Administrator (Feb 2016 - May 2016)<br>
+            • System Administrator (Oct 2014 - May 2016)<br>
+            • Technical Support (May 2010 - Sep 2014)<br>
+            • First-level hosting support at Thor Data Center<br>
+            • Server monitoring and troubleshooting assistance
+          </div>
+        </div>
+      </div>
+
+      <div class="cv-section fade-in">
+        <h2><span>🎓</span> Certifications</h2>
+        <div class="certifications-grid">
+          <div class="cert-item">
+            <div class="cert-name">Microsoft Certified: Windows Server Hybrid Administrator Associate</div>
+            <div class="cert-date">Issued Apr 2025</div>
+            <div class="cert-description">Validates administering Windows Server workloads in on-premises and hybrid
+              environments using PowerShell, Azure Arc, Admin Center, Azure Monitor, and Defender.</div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-name">Microsoft Certified: Azure Administrator Associate</div>
+            <div class="cert-date">Issued Jan 2024</div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-name">Microsoft 365 Messaging</div>
+            <div class="cert-date">Issued Apr 2022</div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-name">Microsoft 365 Certified: Enterprise Administrator Expert</div>
+            <div class="cert-date">Issued Aug 2021</div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-name">Microsoft 365 Managing Teams</div>
+            <div class="cert-date">Issued Aug 2021</div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-name">CompTIA Linux+ (Powered by LPI)</div>
+            <div class="cert-date">Issued Jul 2018</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cv-section fade-in">
+        <h2><span>🛠️</span> Core Competencies</h2>
+        <div class="skills-container">
+          <div class="skill-category">
+            <h3>Cloud Platforms</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">Microsoft Azure</span>
+              <span class="skill-tag">Microsoft 365</span>
+              <span class="skill-tag">Azure Arc</span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <h3>Operating Systems</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">Windows Server</span>
+              <span class="skill-tag">Linux</span>
+              <span class="skill-tag">Ubuntu</span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <h3>Tools & Technologies</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">PowerShell</span>
+              <span class="skill-tag">Docker</span>
+              <span class="skill-tag">SQL Server</span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <h3>Specializations</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">Networking</span>
+              <span class="skill-tag">Infrastructure</span>
+              <span class="skill-tag">Automation</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Smooth scrolling navigation
+    document.querySelectorAll('header nav a').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = link.dataset.target;
+        const targetElement = document.getElementById(targetId);
+        targetElement.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+    // Scroll animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function (entries) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-in').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Header background opacity on scroll
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('header');
+      const scrolled = window.pageYOffset;
+      const opacity = Math.min(scrolled / 100, 0.95);
+      header.style.background = `rgba(44, 62, 80, ${0.95 + opacity * 0.05})`;
+    });
+  </script>
+</body>
+
+</html>
