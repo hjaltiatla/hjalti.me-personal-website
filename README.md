@@ -32,10 +32,6 @@ Hosted on Azure Storage Static Website with Azure Front Door CDN for global perf
 
 - **Global CDN** - Azure Front Door edge locations
 - **HTTPS** - SSL/TLS certificate included
-- **Compression** - Gzip/Brotli enabled
-- **Caching** - Optimized cache policies
-- **Fast DNS** - Azure DNS resolution
-
 
 ## 📱 Browser Support
 
