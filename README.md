@@ -4,12 +4,11 @@
 
 **[https://www.hjalti.me](https://www.hjalti.me)**
 
-Hosted on Azure Storage Static Website with Azure Front Door CDN for global performance.
+Hosted on Cloudflare Pages for global performance.
 
-## ☁️ Azure Architecture
+## ☁️ Architecture
 
-- **Hosting**: Azure Storage Account (Static Website)
-- **CDN**: Azure Front Door for global content delivery
+- **Hosting**: Cloudflare Pages
 - **Domain**: Custom domain with SSL/TLS certificate
 - **Performance**: Edge caching and compression enabled
 
@@ -17,20 +16,18 @@ Hosted on Azure Storage Static Website with Azure Front Door CDN for global perf
 
 - **Responsive Design** - Optimized for all devices
 - **Modern UI/UX** - Professional design with smooth animations
-- **Fast Loading** - Optimized with Azure Front Door CDN
+- **Fast Loading** - Optimized performance
 
 ## 🛠️ Tech Stack
 
 - **Frontend**: HTML5, CSS3, Vanilla JavaScript
-- **Hosting**: Azure Storage Static Website
-- **CDN**: Azure Front Door
+- **Hosting**: Cloudflare Pages
+- **CDN**: Cloudflare
 - **Domain**: Cloudflare
-
-
 
 ## 📈 Performance Features
 
-- **Global CDN** - Azure Front Door edge locations
+- **Global CDN** - Cloudflare edge locations
 - **HTTPS** - SSL/TLS certificate included
 
 ## 📱 Browser Support
@@ -40,4 +37,4 @@ Hosted on Azure Storage Static Website with Azure Front Door CDN for global perf
 
 ---
 
-*Hosted on Microsoft Azure | Built in Reykjavik, Iceland* 🇮🇸 ☁️
+*Hosted on Cloudflare Pages | Built in Reykjavik, Iceland* 🇮🇸 ☁️
